@@ -1,0 +1,58 @@
+
+
+<html>
+ <head> 
+  <title>ニジボックス、最高の会社です</title> 
+  <style>
+    body{
+        background-color: #FFFFCC;
+        color: #CC9966;
+    }
+
+    .slider {
+        position: relative;
+        overflow: hidden;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .slider__wrap {
+        display: flex;
+        transition: transform .5s ease;
+    }
+
+    .slider__item {
+        flex: 0 0 auto;
+        width: 600px;
+    }
+  </style>
+ </head>
+ <body>
+   <div class="slider">
+        <div class="slider__wrap">
+            <div class="slider__item"><img src="https://placeimg.com/640/480/any" alt=""></div>
+            <div class="slider__item"><img src="https://placeimg.com/640/480/any" alt=""></div>
+            <div class="slider__item"><img src="https://placeimg.com/640/480/any" alt=""></div>
+            <div class="slider__item"><img src="https://placeimg.com/640/480/any" alt=""></div>
+        </div> 
+    </div>
+  
+  <footer>
+      <a href="#">ホーム</a>
+      <a href="#">問い合わせ</a>
+      <a href="#">実績</a>
+  </footer>
+  <script>
+    let sliderWrap = document.querySelector(".slider__wrap");
+
+    let left = 0;          
+    setInterval(function () {
+        left = left - 600;           
+        if (left < -1800) {          
+            left = 0;
+        }
+        sliderWrap.style.transform = 'translateX(' + left + 'px)';
+    }, 3000);
+  </script> 
+ </body>
+</html>
